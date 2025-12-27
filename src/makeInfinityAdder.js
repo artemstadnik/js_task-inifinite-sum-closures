@@ -15,10 +15,6 @@ function makeAdder() {
       return result;
     }
 
-    if (typeof number !== 'number') {
-      throw new TypeError('Argument must be a number');
-    }
-
     sum += number;
 
     return adder;
