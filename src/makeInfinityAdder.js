@@ -3,7 +3,7 @@
 /***
  * @return {function}
  */
-function makeInfinityAdder() {
+function makeAdder() {
   let sum = 0;
 
   function adder(number) {
@@ -15,6 +15,10 @@ function makeInfinityAdder() {
       return result;
     }
 
+    if (typeof number !== 'number') {
+      throw new TypeError('Argument must be a number');
+    }
+
     sum += number;
 
     return adder;
@@ -23,4 +27,4 @@ function makeInfinityAdder() {
   return adder;
 }
 
-module.exports = makeInfinityAdder;
+module.exports = makeAdder;
